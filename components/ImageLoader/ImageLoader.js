@@ -49,7 +49,9 @@ const ImageLoader = ({ onImageAnalyzed }) => {
   const handleAnalyze = useCallback(async () => {
     setIsProcessing(true);
     try {
-      const model = await loadImageClassification("./models/model_one/model.json");
+      const model = await loadImageClassification(
+        "./models/model_one/model.json"
+      );
       const image = document.getElementById("image-to-analyze-id");
 
       const predictions = await model.classify(image);
